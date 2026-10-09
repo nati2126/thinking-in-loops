@@ -304,25 +304,3 @@ The shipped model `app/model/ut.pt` is the selected (best) checkpoint of seed 0.
 better-calibrated final-epoch halting head instead, run
 `python scripts/export_model.py --checkpoint checkpoints/ut_s0/last.pt`.
 
-## Limitations and next steps
-
-- **The benchmark is small and mostly seen up to symmetry.** There are only 288 valid 4x4 grids, and
-  all 287 distinct solution grids in the test set also appear in training (under different puzzles); 80.5%
-  of test puzzles are symmetry images of training puzzles. The 390 novel puzzles are a cleaner
-  test, but at this size "generalization" is a weak claim.
-- **The puzzles are easy.** Most need 1–2 loops, so this setup cannot show the main promise of
-  looping: solving harder instances by thinking longer than in training.
-- **Scale up to 6x6 (2x3 boxes) and 9x9 (3x3 boxes), with harder puzzles.** That is where depth
-  and test-time loops should matter and where the UT vs 8-layer comparison becomes informative.
-  `src/data/sudoku.py` is written in terms of `SIZE`/`BOX`, but the augmentation and box ids assume
-  square boxes, and 9x9 generation would need a faster solver.
-- **Add a ConvSwiGLU MLP**, i.e. a depthwise 2D convolution over the grid inside the SwiGLU, to give
-  the block a local row/column/box inductive bias.
-- **Improve halting.** Choose the threshold on validation data, use a PonderNet/ACT-style objective
-  that trades accuracy against loops, or select checkpoints on a combined accuracy + halting metric.
-- **Feed the model its own answer.** Re-embed the predicted digits each loop (recurrence on
-  answers, not just hidden state), add a curriculum over loop counts, and test whether more loops
-  then keep helping on harder puzzles.
-- **Better measurement.** Wall-clock times come from a laptop GPU that was sometimes shared with
-  other work, so treat them as rough. Three seeds is enough to see the large effects here, not
-  fine differences.
