@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# generated / large artefacts (regenerate with the scripts)
+data/*.npz
+checkpoints/
+*.tmp
+# keep the small exported demo model
+!app/model/ut.pt
+.gradio/
+flagged/

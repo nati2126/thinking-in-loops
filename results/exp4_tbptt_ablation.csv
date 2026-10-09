@@ -1,0 +1,4 @@
+variant,tbptt_k,seeds,puzzle_acc_mean,puzzle_acc_std,halt_puzzle_acc_mean,halt_puzzle_acc_std,halt_avg_loops_mean,acc_32_loops_mean,step_peak_mem_mb,step_activation_mem_mb,train_time_s_mean
+K = 1,1,3,0.981833,0.0128679,0.901,0.0563116,1.3805,0.9775,46.958,44.5576,359.536
+K = 3 (default),3,3,0.999333,0.000288654,0.906667,0.0178209,1.144,0.999167,108.811,106.41,265.894
+K = all (8),8,3,0.999667,0.000577343,0.863333,0.0260016,1.11367,1,261.028,258.628,282.818

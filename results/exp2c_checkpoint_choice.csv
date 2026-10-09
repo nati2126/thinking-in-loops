@@ -1,0 +1,7 @@
+run,checkpoint,seeds,fixed8_puzzle_acc_mean,halt_puzzle_acc_mean,halt_puzzle_acc_std,halt_avg_loops_mean
+ut,best (selected),3,0.999333,0.906667,0.0178209,1.144
+ut,last epoch,3,0.999833,0.960333,0.0215484,1.12433
+ut_k1,best (selected),3,0.981833,0.901,0.0563116,1.3805
+ut_k1,last epoch,3,0.982,0.9005,0.0466074,1.35417
+ut_kall,best (selected),3,0.999667,0.863333,0.0260016,1.11367
+ut_kall,last epoch,3,1,0.968167,0.0105987,1.094

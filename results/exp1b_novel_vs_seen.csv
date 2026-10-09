@@ -1,0 +1,5 @@
+model,seen_n,seen_puzzle_acc_mean,seen_puzzle_acc_std,novel_n,novel_puzzle_acc_mean,novel_puzzle_acc_std
+1-layer transformer (same params),1610,0.940166,0.00449327,390,0.896581,0.00391672
+8-layer transformer (same compute),1610,1,0,390,0.997436,0.00444117
+"UT, fixed 8 loops",1610,0.999793,0.000358615,390,0.997436,0
+"UT, adaptive halting (<= 8 loops)",1610,0.920704,0.0155197,390,0.848718,0.0285526

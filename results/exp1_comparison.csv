@@ -1,0 +1,5 @@
+model,params,seeds,cell_acc_mean,cell_acc_std,puzzle_acc_mean,puzzle_acc_std,validity_mean,validity_std,avg_loops_mean,avg_loops_std,train_time_s_mean
+1-layer transformer (same params),203780,3,0.983923,0.000463787,0.931667,0.00419325,0.931667,0.00419325,1,0,42.6455
+8-layer transformer (same compute),1610500,3,0.999833,0.000288555,0.9995,0.000866031,0.9995,0.000866031,1,0,157.908
+"UT, fixed 8 loops",203909,3,0.999833,8.32986e-05,0.999333,0.000288654,0.999333,0.000288654,8,0,265.894
+"UT, adaptive halting (<= 8 loops)",203909,3,0.983757,0.00327206,0.906667,0.0178209,0.906667,0.0178209,1.144,0.0330114,265.894

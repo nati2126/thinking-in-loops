@@ -1,0 +1,30 @@
+datasets already exist in D:\github\sodoku UT\data; skipping generation
+=== ut_s0: finished checkpoint found, skipping training ===
+=== ut_s1: finished checkpoint found, skipping training ===
+=== ut_s2: finished checkpoint found, skipping training ===
+=== same_param_s0: finished checkpoint found, skipping training ===
+=== same_param_s1: finished checkpoint found, skipping training ===
+=== same_param_s2: finished checkpoint found, skipping training ===
+=== same_compute_s0: finished checkpoint found, skipping training ===
+=== same_compute_s1: finished checkpoint found, skipping training ===
+=== same_compute_s2: finished checkpoint found, skipping training ===
+=== ut_k1_s0: finished checkpoint found, skipping training ===
+=== ut_k1_s1: finished checkpoint found, skipping training ===
+=== ut_k1_s2: finished checkpoint found, skipping training ===
+=== ut_kall_s0: finished checkpoint found, skipping training ===
+=== ut_kall_s1: finished checkpoint found, skipping training ===
+=== ut_kall_s2: finished checkpoint found, skipping training ===
+1610/2000 test puzzles are a symmetry image of a training puzzle
+
+exp1_comparison:
+  model=1-layer transformer (same params), params=203780, seeds=3, cell_acc_mean=0.9839, cell_acc_std=0.0005, puzzle_acc_mean=0.9317, puzzle_acc_std=0.0042, validity_mean=0.9317, validity_std=0.0042, avg_loops_mean=1.0000, avg_loops_std=0.0000, train_time_s_mean=42.6455
+  model=8-layer transformer (same compute), params=1610500, seeds=3, cell_acc_mean=0.9998, cell_acc_std=0.0003, puzzle_acc_mean=0.9995, puzzle_acc_std=0.0009, validity_mean=0.9995, validity_std=0.0009, avg_loops_mean=1.0000, avg_loops_std=0.0000, train_time_s_mean=157.9081
+  model=UT, fixed 8 loops, params=203909, seeds=3, cell_acc_mean=0.9998, cell_acc_std=0.0001, puzzle_acc_mean=0.9993, puzzle_acc_std=0.0003, validity_mean=0.9993, validity_std=0.0003, avg_loops_mean=8.0000, avg_loops_std=0.0000, train_time_s_mean=265.8938
+  model=UT, adaptive halting (<= 8 loops), params=203909, seeds=3, cell_acc_mean=0.9838, cell_acc_std=0.0033, puzzle_acc_mean=0.9067, puzzle_acc_std=0.0178, validity_mean=0.9067, validity_std=0.0178, avg_loops_mean=1.1440, avg_loops_std=0.0330, train_time_s_mean=265.8938
+
+exp4_tbptt_ablation:
+  variant=K = 1, tbptt_k=1, seeds=3, puzzle_acc_mean=0.9818, puzzle_acc_std=0.0129, halt_puzzle_acc_mean=0.9010, halt_puzzle_acc_std=0.0563, halt_avg_loops_mean=1.3805, acc_32_loops_mean=0.9775, step_peak_mem_mb=46.9580, step_activation_mem_mb=44.5576, train_time_s_mean=359.5360
+  variant=K = 3 (default), tbptt_k=3, seeds=3, puzzle_acc_mean=0.9993, puzzle_acc_std=0.0003, halt_puzzle_acc_mean=0.9067, halt_puzzle_acc_std=0.0178, halt_avg_loops_mean=1.1440, acc_32_loops_mean=0.9992, step_peak_mem_mb=108.8105, step_activation_mem_mb=106.4102, train_time_s_mean=265.8938
+  variant=K = all (8), tbptt_k=8, seeds=3, puzzle_acc_mean=0.9997, puzzle_acc_std=0.0006, halt_puzzle_acc_mean=0.8633, halt_puzzle_acc_std=0.0260, halt_avg_loops_mean=1.1137, acc_32_loops_mean=1.0000, step_peak_mem_mb=261.0283, step_activation_mem_mb=258.6279, train_time_s_mean=282.8177
+
+all experiments done in 0.2 min -> D:\github\sodoku UT\results

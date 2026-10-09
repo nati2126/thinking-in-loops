@@ -1,0 +1,9 @@
+[project]
+name = "thinking-in-loops"
+version = "0.1.0"
+description = "A Universal Transformer that solves 4x4 Sudoku by looping one shared block."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

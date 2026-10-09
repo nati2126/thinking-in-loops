@@ -1,0 +1,490 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "test_seen_up_to_symmetry": 1610,
+  "epochs": 40,
+  "device": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "exp1_comparison": [
+    {
+      "model": "1-layer transformer (same params)",
+      "params": 203780,
+      "seeds": 3,
+      "cell_acc_mean": 0.9839233652644731,
+      "cell_acc_std": 0.00046378711893628005,
+      "puzzle_acc_mean": 0.9316666722297668,
+      "puzzle_acc_std": 0.0041932537822308305,
+      "validity_mean": 0.9316666722297668,
+      "validity_std": 0.0041932537822308305,
+      "avg_loops_mean": 1.0,
+      "avg_loops_std": 0.0,
+      "train_time_s_mean": 42.64546171824137
+    },
+    {
+      "model": "8-layer transformer (same compute)",
+      "params": 1610500,
+      "seeds": 3,
+      "cell_acc_mean": 0.9998334027488546,
+      "cell_acc_std": 0.00028855490338506603,
+      "puzzle_acc_mean": 0.9994999965031942,
+      "puzzle_acc_std": 0.000866031460429795,
+      "validity_mean": 0.9994999965031942,
+      "validity_std": 0.000866031460429795,
+      "avg_loops_mean": 1.0,
+      "avg_loops_std": 0.0,
+      "train_time_s_mean": 157.90809647242227
+    },
+    {
+      "model": "UT, fixed 8 loops",
+      "params": 203909,
+      "seeds": 3,
+      "cell_acc_mean": 0.9998334027488546,
+      "cell_acc_std": 8.329862557271417e-05,
+      "puzzle_acc_mean": 0.9993333220481873,
+      "puzzle_acc_std": 0.0002886542116381276,
+      "validity_mean": 0.9993333220481873,
+      "validity_std": 0.0002886542116381276,
+      "avg_loops_mean": 8.0,
+      "avg_loops_std": 0.0,
+      "train_time_s_mean": 265.8937972386678
+    },
+    {
+      "model": "UT, adaptive halting (<= 8 loops)",
+      "params": 203909,
+      "seeds": 3,
+      "cell_acc_mean": 0.9837567680133278,
+      "cell_acc_std": 0.00327205653334487,
+      "puzzle_acc_mean": 0.9066666762034098,
+      "puzzle_acc_std": 0.017820863408916667,
+      "validity_mean": 0.9066666762034098,
+      "validity_std": 0.017820863408916667,
+      "avg_loops_mean": 1.1440000136693318,
+      "avg_loops_std": 0.033011354212611047,
+      "train_time_s_mean": 265.8937972386678
+    }
+  ],
+  "exp1b_novel_vs_seen": [
+    {
+      "model": "1-layer transformer (same params)",
+      "seen_n": 1610,
+      "seen_puzzle_acc_mean": 0.9401656190554301,
+      "seen_puzzle_acc_std": 0.004493265779561345,
+      "novel_n": 390,
+      "novel_puzzle_acc_mean": 0.8965811928113302,
+      "novel_puzzle_acc_std": 0.003916718122971104
+    },
+    {
+      "model": "8-layer transformer (same compute)",
+      "seen_n": 1610,
+      "seen_puzzle_acc_mean": 1.0,
+      "seen_puzzle_acc_std": 0.0,
+      "novel_n": 390,
+      "novel_puzzle_acc_mean": 0.9974358876546224,
+      "novel_puzzle_acc_std": 0.004441172858508607
+    },
+    {
+      "model": "UT, fixed 8 loops",
+      "seen_n": 1610,
+      "seen_puzzle_acc_mean": 0.9997929533322653,
+      "seen_puzzle_acc_std": 0.000358615348054474,
+      "novel_n": 390,
+      "novel_puzzle_acc_mean": 0.9974358677864075,
+      "novel_puzzle_acc_std": 0.0
+    },
+    {
+      "model": "UT, adaptive halting (<= 8 loops)",
+      "seen_n": 1610,
+      "seen_puzzle_acc_mean": 0.9207039276758829,
+      "seen_puzzle_acc_std": 0.015519669733755502,
+      "novel_n": 390,
+      "novel_puzzle_acc_mean": 0.8487179279327393,
+      "novel_puzzle_acc_std": 0.028552636056232844
+    }
+  ],
+  "exp2_loops_vs_difficulty": [
+    {
+      "difficulty": "n_empty",
+      "value": "4",
+      "n_puzzles": 394,
+      "halt_loops_mean": 1.0025380849838257,
+      "halt_loops_std": 0.004396092145913716,
+      "oracle_loops_mean": 1.020304560661316,
+      "oracle_loops_std": 0.004396092145913716,
+      "puzzle_acc_at_halt_mean": 0.9822335044542948
+    },
+    {
+      "difficulty": "n_empty",
+      "value": "5",
+      "n_puzzles": 397,
+      "halt_loops_mean": 1.019311507542928,
+      "halt_loops_std": 0.01638893866472556,
+      "oracle_loops_mean": 1.0612930456797283,
+      "oracle_loops_std": 0.003847671526051239,
+      "puzzle_acc_at_halt_mean": 0.9563392003377279
+    },
+    {
+      "difficulty": "n_empty",
+      "value": "6",
+      "n_puzzles": 404,
+      "halt_loops_mean": 1.0717821915944417,
+      "halt_loops_std": 0.03737545027920414,
+      "oracle_loops_mean": 1.1518152157465618,
+      "oracle_loops_std": 0.005152668096174572,
+      "puzzle_acc_at_halt_mean": 0.9042904376983643
+    },
+    {
+      "difficulty": "n_empty",
+      "value": "7",
+      "n_puzzles": 420,
+      "halt_loops_mean": 1.1873015960057576,
+      "halt_loops_std": 0.04881436702006552,
+      "oracle_loops_mean": 1.288095235824585,
+      "oracle_loops_std": 0.002380967140197754,
+      "puzzle_acc_at_halt_mean": 0.850000003973643
+    },
+    {
+      "difficulty": "n_empty",
+      "value": "8",
+      "n_puzzles": 385,
+      "halt_loops_mean": 1.4458874464035034,
+      "halt_loops_std": 0.0584463893270857,
+      "oracle_loops_mean": 1.4926090637842815,
+      "oracle_loops_std": 0.007189429958526433,
+      "puzzle_acc_at_halt_mean": 0.842424233754476
+    },
+    {
+      "difficulty": "backtracks",
+      "value": "0",
+      "n_puzzles": 1673,
+      "halt_loops_mean": 1.0984259843826294,
+      "halt_loops_std": 0.02745867844664657,
+      "oracle_loops_mean": 1.1526500781377156,
+      "oracle_loops_std": 0.006207170577229275,
+      "puzzle_acc_at_halt_mean": 0.9197051326433817
+    },
+    {
+      "difficulty": "backtracks",
+      "value": "1",
+      "n_puzzles": 225,
+      "halt_loops_mean": 1.312592625617981,
+      "halt_loops_std": 0.07087922972250538,
+      "oracle_loops_mean": 1.3678637742996216,
+      "oracle_loops_std": 0.05299059806374375,
+      "puzzle_acc_at_halt_mean": 0.8651851812998453
+    },
+    {
+      "difficulty": "backtracks",
+      "value": "2",
+      "n_puzzles": 57,
+      "halt_loops_mean": 1.3450292348861694,
+      "halt_loops_std": 0.07090263013832543,
+      "oracle_loops_mean": 1.432748516400655,
+      "oracle_loops_std": 0.03652045043785978,
+      "puzzle_acc_at_halt_mean": 0.8362573186556498
+    },
+    {
+      "difficulty": "backtracks",
+      "value": "3+",
+      "n_puzzles": 45,
+      "halt_loops_mean": 1.7407407363255818,
+      "halt_loops_std": 0.06415006049907637,
+      "oracle_loops_mean": 1.9242032368977864,
+      "oracle_loops_std": 0.0656927616112752,
+      "puzzle_acc_at_halt_mean": 0.7185185352961222
+    }
+  ],
+  "exp2b_halting_threshold": [
+    {
+      "threshold": 0.5,
+      "puzzle_acc_mean": 0.9066666762034098,
+      "puzzle_acc_std": 0.017820863408916667,
+      "avg_loops_mean": 1.1440000136693318,
+      "avg_loops_std": 0.033011354212611047
+    },
+    {
+      "threshold": 0.7,
+      "puzzle_acc_mean": 0.9514999985694885,
+      "puzzle_acc_std": 0.017797497123065668,
+      "avg_loops_mean": 1.243333339691162,
+      "avg_loops_std": 0.04427282036066558
+    },
+    {
+      "threshold": 0.9,
+      "puzzle_acc_mean": 0.9896666606267294,
+      "puzzle_acc_std": 0.004368436713180126,
+      "avg_loops_mean": 1.4421666463216145,
+      "avg_loops_std": 0.05488471103847517
+    },
+    {
+      "threshold": 0.95,
+      "puzzle_acc_mean": 0.9951666792233785,
+      "puzzle_acc_std": 0.0015275380824117115,
+      "avg_loops_mean": 1.5761666695276897,
+      "avg_loops_std": 0.08962884763991742
+    },
+    {
+      "threshold": 0.99,
+      "puzzle_acc_mean": 0.9980000058809916,
+      "puzzle_acc_std": 0.0004999935629944276,
+      "avg_loops_mean": 1.9520000219345093,
+      "avg_loops_std": 0.11371454700440627
+    },
+    {
+      "threshold": 0.999,
+      "puzzle_acc_mean": 0.9993333220481873,
+      "puzzle_acc_std": 0.0002886542116381276,
+      "avg_loops_mean": 2.708666721979777,
+      "avg_loops_std": 0.278342144441385
+    }
+  ],
+  "exp2c_checkpoint_choice": [
+    {
+      "run": "ut",
+      "checkpoint": "best (selected)",
+      "seeds": 3,
+      "fixed8_puzzle_acc_mean": 0.9993333220481873,
+      "halt_puzzle_acc_mean": 0.9066666762034098,
+      "halt_puzzle_acc_std": 0.017820863408916667,
+      "halt_avg_loops_mean": 1.1440000136693318
+    },
+    {
+      "run": "ut",
+      "checkpoint": "last epoch",
+      "seeds": 3,
+      "fixed8_puzzle_acc_mean": 0.999833325544993,
+      "halt_puzzle_acc_mean": 0.9603333473205566,
+      "halt_puzzle_acc_std": 0.021548386489196946,
+      "halt_avg_loops_mean": 1.124333341916402
+    },
+    {
+      "run": "ut_k1",
+      "checkpoint": "best (selected)",
+      "seeds": 3,
+      "fixed8_puzzle_acc_mean": 0.9818333387374878,
+      "halt_puzzle_acc_mean": 0.9009999831517538,
+      "halt_puzzle_acc_std": 0.05631163614438395,
+      "halt_avg_loops_mean": 1.380500038464864
+    },
+    {
+      "run": "ut_k1",
+      "checkpoint": "last epoch",
+      "seeds": 3,
+      "fixed8_puzzle_acc_mean": 0.9820000131924947,
+      "halt_puzzle_acc_mean": 0.9004999796549479,
+      "halt_puzzle_acc_std": 0.04660739458910905,
+      "halt_avg_loops_mean": 1.3541667064030964
+    },
+    {
+      "run": "ut_kall",
+      "checkpoint": "best (selected)",
+      "seeds": 3,
+      "fixed8_puzzle_acc_mean": 0.999666670958201,
+      "halt_puzzle_acc_mean": 0.8633333444595337,
+      "halt_puzzle_acc_std": 0.02600159995340481,
+      "halt_avg_loops_mean": 1.1136666536331177
+    },
+    {
+      "run": "ut_kall",
+      "checkpoint": "last epoch",
+      "seeds": 3,
+      "fixed8_puzzle_acc_mean": 1.0,
+      "halt_puzzle_acc_mean": 0.9681666692097982,
+      "halt_puzzle_acc_std": 0.010598728394283562,
+      "halt_avg_loops_mean": 1.094000021616618
+    }
+  ],
+  "exp3_test_time_compute": [
+    {
+      "max_loops": 1,
+      "mode": "fixed",
+      "puzzle_acc_mean": 0.8138333360354105,
+      "puzzle_acc_std": 0.0015275380824117115,
+      "cell_acc_mean": 0.9627099819519644,
+      "cell_acc_std": 0.0005021002726648589,
+      "validity_mean": 0.8138333360354105,
+      "validity_std": 0.0015275380824117115,
+      "avg_loops_mean": 1.0,
+      "avg_loops_std": 0.0
+    },
+    {
+      "max_loops": 1,
+      "mode": "halting",
+      "puzzle_acc_mean": 0.8138333360354105,
+      "puzzle_acc_std": 0.0015275380824117115,
+      "cell_acc_mean": 0.9627099819519644,
+      "cell_acc_std": 0.0005021002726648589,
+      "validity_mean": 0.8138333360354105,
+      "validity_std": 0.0015275380824117115,
+      "avg_loops_mean": 1.0,
+      "avg_loops_std": 0.0
+    },
+    {
+      "max_loops": 2,
+      "mode": "fixed",
+      "puzzle_acc_mean": 0.987333337465922,
+      "puzzle_acc_std": 0.0018929555732112406,
+      "cell_acc_mean": 0.9976398722754407,
+      "cell_acc_std": 0.0003153635066389058,
+      "validity_mean": 0.987333337465922,
+      "validity_std": 0.0018929555732112406,
+      "avg_loops_mean": 2.0,
+      "avg_loops_std": 0.0
+    },
+    {
+      "max_loops": 2,
+      "mode": "halting",
+      "puzzle_acc_mean": 0.9039999842643738,
+      "puzzle_acc_std": 0.017298846000706802,
+      "cell_acc_mean": 0.9832014438428432,
+      "cell_acc_std": 0.0030902929397855056,
+      "validity_mean": 0.9039999842643738,
+      "validity_std": 0.017298846000706802,
+      "avg_loops_mean": 1.1361666520436604,
+      "avg_loops_std": 0.03075844389036519
+    },
+    {
+      "max_loops": 4,
+      "mode": "fixed",
+      "puzzle_acc_mean": 0.9986666838328043,
+      "puzzle_acc_std": 0.0005773428360339612,
+      "cell_acc_mean": 0.9996945717062334,
+      "cell_acc_std": 0.00012724075232422476,
+      "validity_mean": 0.9986666838328043,
+      "validity_std": 0.0005773428360339612,
+      "avg_loops_mean": 4.0,
+      "avg_loops_std": 0.0
+    },
+    {
+      "max_loops": 4,
+      "mode": "halting",
+      "puzzle_acc_mean": 0.9066666762034098,
+      "puzzle_acc_std": 0.017820863408916667,
+      "cell_acc_mean": 0.9837567680133278,
+      "cell_acc_std": 0.00327205653334487,
+      "validity_mean": 0.9066666762034098,
+      "validity_std": 0.017820863408916667,
+      "avg_loops_mean": 1.1440000136693318,
+      "avg_loops_std": 0.033011354212611047
+    },
+    {
+      "max_loops": 8,
+      "mode": "fixed",
+      "puzzle_acc_mean": 0.9993333220481873,
+      "puzzle_acc_std": 0.0002886542116381276,
+      "cell_acc_mean": 0.9998334027488546,
+      "cell_acc_std": 8.329862557271417e-05,
+      "validity_mean": 0.9993333220481873,
+      "validity_std": 0.0002886542116381276,
+      "avg_loops_mean": 8.0,
+      "avg_loops_std": 0.0
+    },
+    {
+      "max_loops": 8,
+      "mode": "halting",
+      "puzzle_acc_mean": 0.9066666762034098,
+      "puzzle_acc_std": 0.017820863408916667,
+      "cell_acc_mean": 0.9837567680133278,
+      "cell_acc_std": 0.00327205653334487,
+      "validity_mean": 0.9066666762034098,
+      "validity_std": 0.017820863408916667,
+      "avg_loops_mean": 1.1440000136693318,
+      "avg_loops_std": 0.033011354212611047
+    },
+    {
+      "max_loops": 16,
+      "mode": "fixed",
+      "puzzle_acc_mean": 0.9993333220481873,
+      "puzzle_acc_std": 0.0002886542116381276,
+      "cell_acc_mean": 0.9998334027488548,
+      "cell_acc_std": 8.329862557271417e-05,
+      "validity_mean": 0.9993333220481873,
+      "validity_std": 0.0002886542116381276,
+      "avg_loops_mean": 16.0,
+      "avg_loops_std": 0.0
+    },
+    {
+      "max_loops": 16,
+      "mode": "halting",
+      "puzzle_acc_mean": 0.9066666762034098,
+      "puzzle_acc_std": 0.017820863408916667,
+      "cell_acc_mean": 0.9837567680133278,
+      "cell_acc_std": 0.00327205653334487,
+      "validity_mean": 0.9066666762034098,
+      "validity_std": 0.017820863408916667,
+      "avg_loops_mean": 1.1440000136693318,
+      "avg_loops_std": 0.033011354212611047
+    },
+    {
+      "max_loops": 32,
+      "mode": "fixed",
+      "puzzle_acc_mean": 0.9991666674613953,
+      "puzzle_acc_std": 0.0002886542116381276,
+      "cell_acc_mean": 0.9998056365403304,
+      "cell_acc_std": 0.00012724075232422474,
+      "validity_mean": 0.9991666674613953,
+      "validity_std": 0.0002886542116381276,
+      "avg_loops_mean": 32.0,
+      "avg_loops_std": 0.0
+    },
+    {
+      "max_loops": 32,
+      "mode": "halting",
+      "puzzle_acc_mean": 0.9066666762034098,
+      "puzzle_acc_std": 0.017820863408916667,
+      "cell_acc_mean": 0.9837567680133278,
+      "cell_acc_std": 0.00327205653334487,
+      "validity_mean": 0.9066666762034098,
+      "validity_std": 0.017820863408916667,
+      "avg_loops_mean": 1.1440000136693318,
+      "avg_loops_std": 0.033011354212611047
+    }
+  ],
+  "exp4_tbptt_ablation": [
+    {
+      "variant": "K = 1",
+      "tbptt_k": 1,
+      "seeds": 3,
+      "puzzle_acc_mean": 0.9818333387374878,
+      "puzzle_acc_std": 0.01286791714651544,
+      "halt_puzzle_acc_mean": 0.9009999831517538,
+      "halt_puzzle_acc_std": 0.05631163614438395,
+      "halt_avg_loops_mean": 1.380500038464864,
+      "acc_32_loops_mean": 0.9775000015894572,
+      "step_peak_mem_mb": 46.9580078125,
+      "step_activation_mem_mb": 44.5576171875,
+      "train_time_s_mean": 359.5360477765401
+    },
+    {
+      "variant": "K = 3 (default)",
+      "tbptt_k": 3,
+      "seeds": 3,
+      "puzzle_acc_mean": 0.9993333220481873,
+      "puzzle_acc_std": 0.0002886542116381276,
+      "halt_puzzle_acc_mean": 0.9066666762034098,
+      "halt_puzzle_acc_std": 0.017820863408916667,
+      "halt_avg_loops_mean": 1.1440000136693318,
+      "acc_32_loops_mean": 0.9991666674613953,
+      "step_peak_mem_mb": 108.810546875,
+      "step_activation_mem_mb": 106.41015625,
+      "train_time_s_mean": 265.8937972386678
+    },
+    {
+      "variant": "K = all (8)",
+      "tbptt_k": 8,
+      "seeds": 3,
+      "puzzle_acc_mean": 0.999666670958201,
+      "puzzle_acc_std": 0.0005773428360339612,
+      "halt_puzzle_acc_mean": 0.8633333444595337,
+      "halt_puzzle_acc_std": 0.02600159995340481,
+      "halt_avg_loops_mean": 1.1136666536331177,
+      "acc_32_loops_mean": 1.0,
+      "step_peak_mem_mb": 261.0283203125,
+      "step_activation_mem_mb": 258.6279296875,
+      "train_time_s_mean": 282.81774218877155
+    }
+  ],
+  "total_time_s": 10.201039552688599,
+  "total_train_time_s": 3326.4034361839294
+}
